@@ -1,0 +1,36 @@
+ANÁLISIS EXPLORATORIO — LIGA PROFESIONAL ARGENTINA 2023–2025
+=================================================================
+Partidos: 1266
+Columnas originales: 53
+IDs duplicados: 0
+Celdas faltantes en CSV original: 0
+
+RESUMEN POR TEMPORADA
+        Partidos  Goles  PromedioGoles  PromedioLocal  PromedioVisitante  MedianaGoles  DesvGoles
+Season                                                                                           
+2023         378    778          2.058          1.204              0.854           2.0      1.492
+2024         378    769          2.034          1.206              0.828           2.0      1.518
+2025         510    993          1.947          1.100              0.847           2.0      1.367
+
+CORRELACIONES CON GOLES TOTALES (Pearson)
+RematesTotales      0.215
+RematesAlArco       0.427
+PosesionPromedio   -0.039
+CornersTotales     -0.051
+
+DISTRIBUCIÓN DE GOLES POR PARTIDO
+TotalGoles
+0    186
+1    314
+2    363
+3    221
+4    111
+5     44
+6     21
+7      2
+8      3
+9      1
+
+NOTA: La posesión promedio es la media entre la posesión del local y visitante;
+no mide por sí sola dominio ni se usa como predictor de un equipo específico.
+Las correlaciones son descriptivas y no implican causalidad.

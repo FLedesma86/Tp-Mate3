@@ -1,0 +1,18 @@
+AUDITORÍA DE LA BASE MAESTRA — LIGA PROFESIONAL ARGENTINA 2023–2025
+Archivo generado: liga_profesional_argentina_2023_2025_maestro.csv
+Filas: 1266
+Columnas: 53
+IDs duplicados en la base final: 0
+Valores faltantes en la base final: 0
+
+Archivos de origen:
+- Database - Overview - Argentina Liga Profesional 23-24-25 - LS.csv: 1266 filas; IDs únicos=1266; duplicados=0; valores faltantes=0
+- Database - Scores - Argentina Liga Profesional 23-24-25 LS.csv: 1266 filas; IDs únicos=1266; duplicados=0; valores faltantes=0
+- Database - Attack  Poss - Argentina Liga Profesional 23-24-25 - LS.csv: 1266 filas; IDs únicos=1266; duplicados=0; valores faltantes=0
+- Database - Corners  Cards - Argentina Liga Profesional 23-24-25 - LS.csv: 1266 filas; IDs únicos=1266; duplicados=0; valores faltantes=0
+
+Partidos por temporada:
+Season
+2023    378
+2024    378
+2025    510
