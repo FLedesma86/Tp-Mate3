@@ -1,0 +1,38 @@
+REGRESIÓN LINEAL MÚLTIPLE: MÉTRICAS, VALIDACIÓN, REGULARIZACIÓN Y OPTIMIZACIÓN
+================================================================================
+
+1. DIAGNÓSTICO TRAIN VS. TEST
+                      Conjunto    MAE    MSE   RMSE  RMSE_%_Media     R2  R2_Ajustado
+     Entrenamiento (Train 80%) 0.7325 0.8791 0.9376       80.3454 0.2335       0.2305
+Validación / Prueba (Test 20%) 0.6750 0.7672 0.8759       76.4528 0.3080       0.2969
+
+2. INFERENCIA ESTADÍSTICA (OLS)
+Estadístico F: 76.7058 (p-valor: 8.2412e-57)
+Variable  Coeficiente  Error_Estandar  t_stat  p_valor  IC_95_Inf  IC_95_Sup
+   const       1.1670          0.0295 39.4960   0.0000     1.1090     1.2250
+   HTSFT      -0.1530          0.0425 -3.5990   0.0003    -0.2364    -0.0696
+  HSONFT       0.5774          0.0373 15.4974   0.0000     0.5042     0.6505
+   HBPFT      -0.0502          0.0331 -1.5159   0.1298    -0.1151     0.0148
+    HCFT      -0.1866          0.0344 -5.4236   0.0000    -0.2541    -0.1191
+
+3. VALIDACIÓN CRUZADA K-FOLD (K=5)
+MSE promedio CV: 0.8909 (+/- 0.0608)
+R2 promedio CV:  0.2148 (+/- 0.0520)
+
+4. COMPARACIÓN DE COEFICIENTES (OLS VS. RIDGE VS. LASSO)
+        OLS (Sin Reg.)  Best Ridge (α=5.0)  Best Lasso (α=0.001)  Lasso Fuerte (α=0.1)
+HTSFT          -0.1530             -0.1491               -0.1509               -0.0000
+HSONFT          0.5774              0.5722                0.5749                0.3635
+HBPFT          -0.0502             -0.0508               -0.0498               -0.0000
+HCFT           -0.1866             -0.1860               -0.1861               -0.1266
+
+5. TABLA COMPARATIVA DE TODOS LOS MODELOS EN TEST
+                           Modelo     Hiperparámetro    MAE    MSE   RMSE  RMSE_%_Media     R2  R2_Ajustado
+         RLM Base (OLS Analítico)                  - 0.6750 0.7672 0.8759       76.4528 0.3080       0.2969
+RLM Descenso de Gradiente (Batch) lr=0.01, iter=1000 0.6751 0.7672 0.8759       76.4543 0.3080       0.2969
+   RLM SGDRegressor (Estocástico)         eta0=0.005 0.6822 0.7785 0.8823       77.0155 0.2978       0.2865
+           RLM Ridge Inicial (L2)          alpha=0.5 0.6751 0.7673 0.8759       76.4566 0.3080       0.2968
+           RLM Lasso Inicial (L1)          alpha=0.1 0.7200 0.8429 0.9181       80.1340 0.2398       0.2276
+    RLM Best Ridge (GridSearchCV)          alpha=5.0 0.6756 0.7680 0.8763       76.4906 0.3073       0.2962
+    RLM Best Lasso (GridSearchCV)        alpha=0.001 0.6753 0.7676 0.8761       76.4715 0.3077       0.2966
+   RLM Polinómica Grado 2 + Ridge  deg=2, alpha=5.74 0.6733 0.7640 0.8741       76.2937 0.3109       0.2705
